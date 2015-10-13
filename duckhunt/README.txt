@@ -1,0 +1,1 @@
+I correctly have the background canvas set with the birds on the canvas.  However, I did not animate the birds.  I did not collaborate or discuss the assignment with anyone.  I spent about 1 to 1.5 hours on this assignment.
