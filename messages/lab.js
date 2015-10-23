@@ -2,7 +2,7 @@
 function parse() {
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', 'data.json');
+	xhr.open('GET', 'data.json');
 	// xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.onreadystatechange = function () {
 	    if (xhr.readyState == 4) {
