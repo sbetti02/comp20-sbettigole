@@ -11,7 +11,7 @@ function parse() {
 	    	parsing_json = JSON.parse(xhr.responseText);
 	    	//elem.innerHTML = xhr.responseText;
 	    	for (var i = 0; i < parsing_json.length; i++) {
-	    		elem.innerHTML = elem.innerHTML + '\n' + parsing_json[i].content + ' ' + parsing_json[i].username;
+	    		elem.innerHTML = elem.innerHTML + '<br>' + parsing_json[i].content + ' ' + parsing_json[i].username;
 	    	}
 
 	        //alert(xhr.responseText);
