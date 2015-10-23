@@ -8,7 +8,7 @@ function parse() {
 	    if (xhr.readyState == 4) {
 	    	//elem = xhr.responseText;
 	    	elem = document.getElementById("messages");
-	    	parsing_json = JSON.parse(xhr.resonseText);
+	    	parsing_json = JSON.parse(xhr.responseText);
 	    	//elem.innerHTML = xhr.responseText;
 	    	for (var i = 0; i < parsing_json.length; i++) {
 	    		elem.innerHTML = parsing_json[i].id;
