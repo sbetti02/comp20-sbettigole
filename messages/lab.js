@@ -10,7 +10,8 @@ function parse() {
 	    	elem = document.getElementById("messages");
 	    	parsing_json = JSON.parse(xhr.resonseText);
 	    	//elem.innerHTML = xhr.responseText;
-	    	elem.innerHTML = parsing_json.id;
+	    	elem.innerHTML = parsing_json[0].id;
+	    	elem.innerHTML = parsing_json[1].id;
 
 	        //alert(xhr.responseText);
 	        //var json = data.json,
