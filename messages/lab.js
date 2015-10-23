@@ -6,7 +6,11 @@ function parse() {
 	// xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.onreadystatechange = function () {
 	    if (xhr.readyState == 4) {
-	        alert(xhr.responseText);
+	    	//elem = xhr.responseText;
+	    	elem = document.getElementById("messages");
+	    	elem.innerHTML = xhr.responseText;
+
+	        //alert(xhr.responseText);
 	        var json = data.json,
 	        	obj = JSON.parse(json);
 	        //xhr.send(JSON.stringify(myData));
