@@ -8,11 +8,13 @@ function parse() {
 	    if (xhr.readyState == 4) {
 	    	//elem = xhr.responseText;
 	    	elem = document.getElementById("messages");
-	    	elem.innerHTML = xhr.responseText;
+	    	parsing_json = JSON.parse(xhr.resonseText);
+	    	//elem.innerHTML = xhr.responseText;
+	    	elem.innerHTML = parsing_json.id;
 
 	        //alert(xhr.responseText);
-	        var json = data.json,
-	        	obj = JSON.parse(json);
+	        //var json = data.json,
+	        //	obj = JSON.parse(json);
 	        //xhr.send(JSON.stringify(myData));
 	    }
 	}
