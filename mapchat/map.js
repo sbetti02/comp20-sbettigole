@@ -21,9 +21,10 @@
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
 
 			function init() {
+			var my_location = new google.maps.LatLng(myLat, myLng);
 				var myOptions = {
 					zoom: 13,
-					center: (0,0),
+					center: my_Location,
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};		
 				//var infowindow = new google.maps.InfoWindow();				
