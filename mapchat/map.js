@@ -18,15 +18,15 @@
 //}
 			var myLat = 0;
 			var myLng = 0;
-			var my_location = new google.maps.LatLng(myLat,  myLng);
+			//var my_location = new google.maps.LatLng(myLat,  myLng);
 			var myOptions = {
 				zoom: 13,
-				center: my_location,
+				center: (0,0),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};		
 			var infowindow = new google.maps.InfoWindow();
 			function init() {
-				map = new google.maps.Map(document.getElementById("canvas"))
+				map = new google.maps.Map(document.getElementById("canvas"), myOptions)
 				FindMyLocation();
 			}
 
@@ -46,7 +46,7 @@
 				me = new google.maps.LatLng(myLat, myLng);
 				map.panTo(me);
 				marker = new google.maps.Marker({
-					position: myLocation,
+					position: me,
 					title: "Found Me!"
 				});
 				marker.setMap(map);
