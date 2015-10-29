@@ -16,14 +16,14 @@
 //	}
 //	xhr.send();
 //}
+			var myLat = 0;
+			var myLng = 0;
 			function init() {
 				map = new google.maps.Map(document.getElementById("canvas"))
 				FindMyLocation();
 			}
 
 			function FindMyLocation() {
-				var myLat = 0;
-				var myLng = 0;
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						myLat = pos.coords.latitude;
