@@ -19,13 +19,14 @@
 			var myLat = 0;
 			var myLng = 0;
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
-			var myOptions = {
-				zoom: 13,
-				center: (0,0),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};		
-			var infowindow = new google.maps.InfoWindow();
+
 			function init() {
+				var myOptions = {
+					zoom: 13,
+					center: (0,0),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};		
+				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions)
 				FindMyLocation();
 			}
