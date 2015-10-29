@@ -22,6 +22,8 @@
 			}
 
 			function FindMyLocation() {
+				var myLat = 0;
+				var myLng = 0;
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(function(pos) {
 						myLat = pos.coords.latitude;
