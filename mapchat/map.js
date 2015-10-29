@@ -23,8 +23,12 @@
 
 			function FindMyLocation() {
 				if (navigator.geolocation) {
-					myLat = position.coords.latitude;
-					myLng = position.coords.longitude;
+					navigator.geolocation.getCurrentPosition(function(pos) {
+						myLat = pos.coords.latitude;
+						myLng = pos.coords.longitude;
+					})
+					//myLat = position.coords.latitude;
+					//myLng = position.coords.longitude;
 					drawMap();
 				}
 			}
