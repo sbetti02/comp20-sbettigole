@@ -1,13 +1,13 @@
 //function map() {
 
-			var xhr = new XMLHttpRequest();
+//			var xhr = new XMLHttpRequest();
 //	xhr.open('POST', 'https://secret-about-box.herokuapp.com/sendLocation');
 //	xhr.onreadystatechange = function () {
 //	    if (xhr.readyState == 4) {
-	    	var myLat = 0;
-	    	var myLng = 0;
-	    	var my_location = new google.maps.LatLng(myLat, myLng);
-	    	console.log(my_location);
+//	    	var myLat = 0;
+//	    	var myLng = 0;
+//	    	var my_location = new google.maps.LatLng(myLat, myLng);
+//	    	console.log(my_location);
 	    	//parsing_json = JSON.parse(xhr.responseText);
 	    	//for (var i = 0; i < parsing_json.length; i++) {
 	    	//	elem.innerHTML = elem.innerHTML + '<span>' + parsing_json[i].content + ' - ' + parsing_json[i].username + '</span>' + '<br>';
