@@ -22,8 +22,10 @@
 			//var myLat = 0;
 			//var myLng = 0;
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
-
+			var login = "VicJohnson";
 			function init() {
+			var myLat;
+			var myLng;
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(pos) {
 					myLat = pos.coords.latitude;
@@ -37,14 +39,29 @@
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
 				//var infowindow = new google.maps.InfoWindow();
-				FindMyLocation();
+				//FindMyLocation();
+				drawMap();
+				var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
+				sendLocation(myLocation);
 				})
 			}
 			//var my_location = new google.maps.LatLng(myLat, myLng);
 
 			}
 
-			function FindMyLocation() {
+			sendLocation(myLocation) {
+				request = new XMLHttpRequest();
+				var URI = "https://secret-about-box.herokuapp.com/sendLocation";
+				request.open("POST", URI, true);
+				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				//function isready () {
+				//	if (request.readyState == 4) {
+
+				//	}
+				//}
+				request.send(myLocation);
+			}
+			//function FindMyLocation() {
 //				if (navigator.geolocation) {
 //					navigator.geolocation.getCurrentPosition(function(pos) {
 //						myLat = pos.coords.latitude;
@@ -52,9 +69,9 @@
 //					})
 					//myLat = position.coords.latitude;
 					//myLng = position.coords.longitude;
-					drawMap();
+			//		drawMap();
 				//}
-			}
+			//}
 
 			function drawMap() {
 				me = new google.maps.LatLng(myLat, myLng);
