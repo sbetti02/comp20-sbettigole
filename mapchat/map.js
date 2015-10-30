@@ -34,7 +34,7 @@
 					myLng = pos.coords.longitude;
 
 					var myOptions = {
-						zoom: 8,
+						zoom: 12,
 						center: new google.maps.LatLng(myLat, myLng),
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};		
@@ -75,7 +75,7 @@
 			function showEveryone(everyone) {
 				for (var i = 0; i < everyone.length; i++) {
 					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
-					var newMarker = new google.maps.Marker({position: pos, titile: everyone[i].login});
+					var newMarker = new google.maps.Marker({position: location, titile: everyone[i].login});
 					newMarker.setMap(map);
 					google.maps.event.addListener(newMarker, 'click', function() {
 						var personInfoWindow = new google.maps.InfoWindow();
