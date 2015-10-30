@@ -60,7 +60,8 @@
 				request.onreadystatechange = function isready() {
 					if (request.readyState == 4) {
 						var everyone = JSON.parse(request.response);
-						console.log(everyone); // remove line!!!
+						showEveryone(everyone);
+						//console.log(everyone); // remove line!!!
 					}
 				}
 				//function isready () {
@@ -70,6 +71,20 @@
 				//}
 				request.send(myLocation);
 			}
+
+			function showEveryone(everyone) {
+				for (var i = 0; i < everyone.length; i++) {
+					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
+					var newMarker = new google.maps.Marker({position: pos, titile: everyone[i].login});
+					newMarker.setMap(map);
+					google.maps.event.addListener(newMarker, 'click', function() {
+						var personInfoWindow = new google.maps.InfoWindow();
+						personInfoWindow.setContent("Name: " + newMarker.title);
+						personInfoWindow.open(map, newMarker);
+					}
+				}
+			}
+
 	/*function sendLocation(myLocation) {
 				console.log(login);
 				console.log(myLat);
