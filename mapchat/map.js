@@ -16,6 +16,9 @@
 //	}
 //	xhr.send();
 //}
+
+// xmlHttprequest
+
 			//var myLat = 0;
 			//var myLng = 0;
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
@@ -33,6 +36,7 @@
 					};		
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
+				var infowindow = new google.maps.InfoWindow();
 				FindMyLocation();
 				})
 			}
@@ -55,11 +59,18 @@
 			function drawMap() {
 				me = new google.maps.LatLng(myLat, myLng);
 				map.panTo(me);
+				//for (int i = 0; i < list.length; i++) {
+				//	marker
+				//}
 				marker = new google.maps.Marker({
 					position: me,
 					title: "Found Me!"
 				});
 				marker.setMap(map);
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});
 			}
 			/*function init()
 			{
