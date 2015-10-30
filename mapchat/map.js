@@ -41,8 +41,8 @@
 				//var infowindow = new google.maps.InfoWindow();
 				//FindMyLocation();
 				drawMap();
-				var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
-				sendLocation(myLocation);
+				//var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
+				sendLocation();
 				})
 			}
 			//var my_location = new google.maps.LatLng(myLat, myLng);
@@ -50,6 +50,7 @@
 			}
 
 			function sendLocation(myLocation) {
+				var myLocation = "login=" + login + "&lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&message=" + "Hello!";
 				request = new XMLHttpRequest();
 				var URI = "https://secret-about-box.herokuapp.com/sendLocation";
 				request.open("POST", URI, true);
