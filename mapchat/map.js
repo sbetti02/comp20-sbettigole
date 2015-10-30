@@ -79,7 +79,7 @@
 					newMarker.setMap(map);
 					google.maps.event.addListener(newMarker, 'click', function() {
 						var personInfoWindow = new google.maps.InfoWindow();
-						personInfoWindow.setContent("Name: " + newMarker.title + "Message: " + newMarker.message);
+						personInfoWindow.setContent("Name: " + newMarker.title + " Message: " + everyone[i].message);
 						personInfoWindow.open(map, newMarker);
 					})
 				}
