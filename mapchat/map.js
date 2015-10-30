@@ -21,10 +21,16 @@
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
 
 			function init() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(pos) {
+					myLat = pos.coords.latitude;
+					myLng = pos.coords.longitude;
+				})
+			}
 			//var my_location = new google.maps.LatLng(myLat, myLng);
 				var myOptions = {
 					zoom: 8,
-					center: new google.maps.LatLng(0,0),
+					center: new google.maps.LatLng(myLat, myLng),
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};		
 				//var infowindow = new google.maps.InfoWindow();				
@@ -33,15 +39,15 @@
 			}
 
 			function FindMyLocation() {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(function(pos) {
-						myLat = pos.coords.latitude;
-						myLng = pos.coords.longitude;
-					})
+//				if (navigator.geolocation) {
+//					navigator.geolocation.getCurrentPosition(function(pos) {
+//						myLat = pos.coords.latitude;
+//						myLng = pos.coords.longitude;
+//					})
 					//myLat = position.coords.latitude;
 					//myLng = position.coords.longitude;
 					drawMap();
-				}
+				//}
 			}
 
 			function drawMap() {
