@@ -81,7 +81,7 @@
 						var personInfoWindow = new google.maps.InfoWindow();
 						personInfoWindow.setContent("Name: " + newMarker.title);
 						personInfoWindow.open(map, newMarker);
-					}
+					})
 				}
 			}
 
