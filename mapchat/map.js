@@ -16,8 +16,8 @@
 //	}
 //	xhr.send();
 //}
-			var myLat = 0;
-			var myLng = 0;
+			//var myLat = 0;
+			//var myLng = 0;
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
 
 			function init() {
