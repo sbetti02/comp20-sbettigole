@@ -36,7 +36,7 @@
 					};		
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
-				var infowindow = new google.maps.InfoWindow();
+				//var infowindow = new google.maps.InfoWindow();
 				FindMyLocation();
 				})
 			}
@@ -67,6 +67,7 @@
 					title: "Found Me!"
 				});
 				marker.setMap(map);
+				var infowindow = new google.maps.InfoWindow();
 				google.maps.event.addListener(marker, 'click', function() {
 					infowindow.setContent(marker.title);
 					infowindow.open(map, marker);
