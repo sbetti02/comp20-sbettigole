@@ -23,7 +23,7 @@
 			function init() {
 			//var my_location = new google.maps.LatLng(myLat, myLng);
 				var myOptions = {
-					zoom: 13,
+					zoom: 8,
 					center: new google.maps.LatLng(0,0),
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				};		
