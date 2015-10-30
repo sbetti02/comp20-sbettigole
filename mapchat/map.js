@@ -75,11 +75,11 @@
 			function showEveryone(everyone) {
 				for (var i = 0; i < everyone.length; i++) {
 					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
-					var newMarker = new google.maps.Marker({position: location, titile: everyone[i].login});
+					var newMarker = new google.maps.Marker({position: location, title: everyone[i].login});
 					newMarker.setMap(map);
 					google.maps.event.addListener(newMarker, 'click', function() {
 						var personInfoWindow = new google.maps.InfoWindow();
-						personInfoWindow.setContent("Name: " + newMarker.title);
+						personInfoWindow.setContent("Name: " + newMarker.title + "Message: " + newMarker.message);
 						personInfoWindow.open(map, newMarker);
 					})
 				}
