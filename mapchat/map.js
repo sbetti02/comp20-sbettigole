@@ -24,8 +24,8 @@
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
 			var login = "VicJohnson";
 			function init() {
-			var myLat;
-			var myLng;
+			//var myLat;
+			//var myLng;
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(pos) {
 					myLat = pos.coords.latitude;
