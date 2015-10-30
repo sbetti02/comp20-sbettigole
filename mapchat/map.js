@@ -23,6 +23,8 @@
 			//var myLng = 0;
 			//var my_location = new google.maps.LatLng(myLat,  myLng);
 			var login = "VicJohnson";
+			var myLat;
+			var myLng;
 			function init() {
 			//var myLat;
 			//var myLng;
@@ -50,18 +52,51 @@
 			}
 
 			function sendLocation(myLocation) {
-				var myLocation = "login=" + login + "&lat=" + pos.coords.latitude + "&lng=" + pos.coords.longitude + "&message=" + "Hello!";
+				var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
 				request = new XMLHttpRequest();
 				var URI = "https://secret-about-box.herokuapp.com/sendLocation";
 				request.open("POST", URI, true);
 				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				request.onreadystatechange = function isready() {
+					if (request.readyState == 4) {
+						var everyone = JSON.parse(request.response);
+						console.log(everyone); // remove line!!!
+					}
+				}
 				//function isready () {
 				//	if (request.readyState == 4) {
-
+				//		var everyone = JSON.parse(request.response);
 				//	}
 				//}
 				request.send(myLocation);
 			}
+	/*function sendLocation(myLocation) {
+				console.log(login);
+				console.log(myLat);
+				console.log(myLng);
+				var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
+				request = new XMLHttpRequest();
+				console.log(myLocation);
+				console.log(login + "2");
+				var URI = "https://secret-about-box.herokuapp.com/sendLocation";
+				request.open("POST", URI, true);
+				request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				request.onreadystatechange = 
+				function isready () {
+					if (request.readyState == 4) {
+						var everyone = JSON.parse(request.response);
+						console.log(everyone);
+					}
+					else {
+						console.log("yoooo");
+					}
+				}
+				//isready();
+				request.send(myLocation);
+			}
+*/
+
+
 			//function FindMyLocation() {
 //				if (navigator.geolocation) {
 //					navigator.geolocation.getCurrentPosition(function(pos) {
