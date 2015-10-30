@@ -49,7 +49,7 @@
 
 			}
 
-			sendLocation(myLocation) {
+			function sendLocation(myLocation) {
 				request = new XMLHttpRequest();
 				var URI = "https://secret-about-box.herokuapp.com/sendLocation";
 				request.open("POST", URI, true);
