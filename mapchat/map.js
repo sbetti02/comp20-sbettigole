@@ -25,17 +25,19 @@
 				navigator.geolocation.getCurrentPosition(function(pos) {
 					myLat = pos.coords.latitude;
 					myLng = pos.coords.longitude;
-				})
-			}
-			//var my_location = new google.maps.LatLng(myLat, myLng);
-				var myOptions = {
-					zoom: 8,
-					center: new google.maps.LatLng(myLat, myLng),
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				};		
+
+					var myOptions = {
+						zoom: 8,
+						center: new google.maps.LatLng(myLat, myLng),
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};		
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
 				FindMyLocation();
+				})
+			}
+			//var my_location = new google.maps.LatLng(myLat, myLng);
+
 			}
 
 			function FindMyLocation() {
