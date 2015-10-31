@@ -40,14 +40,14 @@
 					};		
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
-				me = myOptions.center;
-				var myMarker = new google.maps.Marker({position: me, title: login, message: "Found Me!!!!"});
-				myMarker.setMap(map);
-				google.maps.event.addListener(myMarker, 'click', function() {
-					var myInfo = new google.maps.InfoWindow();
-					myInfo.setContent(myMarker.message + " - " + myMarker.title);
-					myInfo.open(map, myMarker)
-				})
+				//me = myOptions.center;
+				//var myMarker = new google.maps.Marker({position: me, title: login, message: "Found Me!!!!"});
+				//myMarker.setMap(map);
+				//google.maps.event.addListener(myMarker, 'click', function() {
+				//	var myInfo = new google.maps.InfoWindow();
+				//	myInfo.setContent(myMarker.message + " - " + myMarker.title);
+				//	myInfo.open(map, myMarker)
+				//})
 				//var infowindow = new google.maps.InfoWindow();
 				//FindMyLocation();
 				//drawMap();
@@ -105,6 +105,16 @@
 				var personInfoWindow = new google.maps.InfoWindow();
 				for (var i = 0; i < everyone.length; i++) {
 					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
+					if ((everyone[i].lat == myLat) && (everyone[i].lng == myLng)) {
+						var myMarker = new google.maps.Marker({position: location, title: login});
+						myMarker.message = "Found Me!!!";
+						myMarker.setMap(map);
+						google.maps.event.addListener(myMarker, 'click', function() {
+							personInfoWindow.setContent(this.message + " - " + this.title);
+							personInfoWindow.open(map, this)
+						})
+					}
+					else {
 					var newMarker = new google.maps.Marker({position: location, title: everyone[i].login});
 					newMarker.message = everyone[i].message;
 					newMarker.setMap(map);
@@ -114,6 +124,7 @@
 						personInfoWindow.setContent("Name: " + this.title + " Message: " + this.message);
 						personInfoWindow.open(map, this);
 					})
+				}
 				}
 			}
 
