@@ -57,6 +57,7 @@
 				//drawMap();
 				})
 			}
+		}
 /*			function mapMe(lat, lng) {
 				me = new google.maps.LatLng(myLat, myLng);
 				myMarker = new google.maps.Marker({
