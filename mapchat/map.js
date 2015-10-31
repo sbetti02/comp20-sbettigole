@@ -77,15 +77,33 @@
 				for (var i = 0; i < everyone.length; i++) {
 					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
 					var newMarker = new google.maps.Marker({position: location, title: everyone[i].login});
+					newMarker.message = everyone[i].message;
 					newMarker.setMap(map);
-					var messageInfo = everyone[i].message;
+					//var messageInfo = everyone[i].message;
 					google.maps.event.addListener(newMarker, 'click', function() {
 					//	var personInfoWindow = new google.maps.InfoWindow();
-						personInfoWindow.setContent("Name: " + newMarker.title + " Message: " + messageInfo);
-						personInfoWindow.open(map, newMarker);
+						personInfoWindow.setContent("Name: " + this.title + " Message: " + this.message);
+						personInfoWindow.open(map, this);
 					})
 				}
 			}
+
+
+						/*function showEveryone(everyone) {
+				var personInfoWindow = new google.maps.InfoWindow();
+				for (var i = 0; i < everyone.length; i++) {
+					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
+					var newMarker = new google.maps.Marker({position: location, title: everyone[i].login});
+					newMarker.message = everyone[i].message;
+					newMarker.setMap(map);
+					//var messageInfo = everyone[i].message;
+					google.maps.event.addListener(newMarker, 'click', function() {
+					//	var personInfoWindow = new google.maps.InfoWindow();
+						personInfoWindow.setContent("Name: " + this.title + " Message: " + this.message);
+						personInfoWindow.open(map, this);
+					})
+				}
+			}*/
 
 	/*function sendLocation(myLocation) {
 				console.log(login);
