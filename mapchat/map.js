@@ -115,14 +115,15 @@
 						})
 					}
 					else {
-					distance = distance_from(everyone[i]);
+					//distance = distance_from(everyone[i]);
 					var newMarker = new google.maps.Marker({position: location, title: everyone[i].login});
 					newMarker.message = everyone[i].message;
+					newMarker.distance = distance_from(everyone[i]);
 					newMarker.setMap(map);
 					//var messageInfo = everyone[i].message;
 					google.maps.event.addListener(newMarker, 'click', function() {
 					//	var personInfoWindow = new google.maps.InfoWindow();
-						personInfoWindow.setContent("Name: " + this.title + " Distance from me: " + distance + " Message: " + this.message);
+						personInfoWindow.setContent("Name: " + this.title + " Distance from me: " + this.distance + " miles." + " Message: " + this.message);
 						personInfoWindow.open(map, this);
 					})
 				}
