@@ -139,7 +139,7 @@
 				var a = Math.sin(differenceLat/2) * Math.sin(differenceLat/2)+
 						Math.sin(differenceLng/2) * Math.sin(differenceLng/2) *
 						(Math.cos(myLatRad) * Math.cos(myLngRad));
-				var b = (2 * Math.atan(Math.sqrt(a), Math.sqrt(1-a));
+				var b = (2 * Math.atan(Math.sqrt(a), Math.sqrt(1-a)));
 				var distance = 3959 * b;
 				return distance;
 			}
