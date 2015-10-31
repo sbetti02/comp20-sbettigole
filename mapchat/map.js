@@ -106,7 +106,7 @@
 				for (var i = 0; i < everyone.length; i++) {
 					var location = new google.maps.LatLng(everyone[i].lat, everyone[i].lng);
 					if ((everyone[i].lat == myLat) && (everyone[i].lng == myLng)) {
-						var myMarker = new google.maps.Marker({position: location, title: login, icon: 'https://cdn2.iconfinder.com/data/icons/fugue/icon/trophy.png'});
+						var myMarker = new google.maps.Marker({position: location, title: login, icon: 'trophy.png'});
 						myMarker.message = "Found Me!!!";
 						myMarker.setMap(map);
 						google.maps.event.addListener(myMarker, 'click', function() {
