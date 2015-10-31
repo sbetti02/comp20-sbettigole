@@ -40,16 +40,44 @@
 					};		
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
+				me = myOptions.center;
+				var myMarker = new google.maps.Marker({position: me, title: login, message: "Found Me!"});
+				myMarker.setMap(map);
+				google.maps.event.addListener(marker, 'click', function() {
+					var myInfo = new google.maps.InfoWindow();
+					myInfo.setContent(myMarker.title + myMarker.message);
+					myInfo.open(map, myMarker)
+				})
 				//var infowindow = new google.maps.InfoWindow();
 				//FindMyLocation();
-				drawMap();
+				//drawMap();
 				//var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
 				sendLocation();
+				//mapMe(myLat, myLng);
+				//drawMap();
 				})
 			}
-			//var my_location = new google.maps.LatLng(myLat, myLng);
+/*			function mapMe(lat, lng) {
+				me = new google.maps.LatLng(myLat, myLng);
+				myMarker = new google.maps.Marker({
+					position: me,
+					title: "Found Me!"
+				});
+				marker.setMap(map);
+				var infowindow = new google.maps.InfoWindow();
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.setContent(marker.title);
+					infowindow.open(map, marker);
+				});		
+			}*/
 
-			}
+
+
+
+
+
+
+
 
 			function sendLocation(myLocation) {
 				var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
