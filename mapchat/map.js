@@ -75,18 +75,3 @@ function distance_from(person) {
 	var distance = 3959 * b;
 	return distance;
 }
-
-function drawMap() {
-	me = new google.maps.LatLng(myLat, myLng);
-	map.panTo(me);
-	marker = new google.maps.Marker({
-		position: me,
-		title: "Found Me!"
-	});
-	marker.setMap(map);
-	var infowindow = new google.maps.InfoWindow();
-	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.setContent(marker.title);
-		infowindow.open(map, marker);
-	});
-}
