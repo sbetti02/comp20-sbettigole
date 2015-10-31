@@ -41,11 +41,11 @@
 				//var infowindow = new google.maps.InfoWindow();				
 				map = new google.maps.Map(document.getElementById("canvas"), myOptions);
 				me = myOptions.center;
-				var myMarker = new google.maps.Marker({position: me, title: login, message: "Found Me!"});
+				var myMarker = new google.maps.Marker({position: me, title: login, message: "Found Me!!!!"});
 				myMarker.setMap(map);
-				google.maps.event.addListener(marker, 'click', function() {
+				google.maps.event.addListener(myMarker, 'click', function() {
 					var myInfo = new google.maps.InfoWindow();
-					myInfo.setContent(myMarker.title + myMarker.message);
+					myInfo.setContent(myMarker.message + " - " + myMarker.title);
 					myInfo.open(map, myMarker)
 				})
 				//var infowindow = new google.maps.InfoWindow();
