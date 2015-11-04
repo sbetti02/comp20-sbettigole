@@ -28,7 +28,8 @@
 
 					$('div#log').after((today.getMonth()+1) + '/' + (today.getDay()+1) + '/' + today.getFullYear() + " " + today.getHours() + ":" + minutes + ":" + seconds + " - " + ($(':input').val()));
 					//e.preventDefault();
-					/*function store() {
+					store();
+					function store() {
 						txt = $("div#log").val;
 						localStorage[new Date().getTime()] = txt;
 						reload();
@@ -40,7 +41,7 @@
 							output = output + "<p>" + localStorage[key] + "</p>\n";
 						}
 						elem.innerHTML = output;
-					}*/
+					}
 				}
 			});
 		});
