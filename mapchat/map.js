@@ -23,7 +23,7 @@ function init() {
 function sendLocation(myLocation) {
 	var myLocation = "login=" + login + "&lat=" + myLat + "&lng=" + myLng + "&message=" + "Hello!";
 	request = new XMLHttpRequest();
-	var URI = "https://secret-about-box.herokuapp.com/sendLocation";
+	var URI = "https://lit-bastion-2806.herokuapp.com/";
 	request.open("POST", URI, true);
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	request.onreadystatechange = function isready() {
