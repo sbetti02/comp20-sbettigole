@@ -3,6 +3,7 @@ function init () {
 	var ctx = canvas.getContext('2d');
 	var image = new Image();
 	var image2 = new Image();
+	alert('ayyyy');
 	image.addEventListener("load", function() {
 		ctx.drawImage(image, 0, 0);
 		ctx.drawImage(image2, 167, 150, 40, 45, 100, 70, 50, 50);
