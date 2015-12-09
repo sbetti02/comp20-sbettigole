@@ -1,16 +1,16 @@
-<h3>Introduction</h3>
+<h1>Introduction</h1>
 
 My client's product, found at https://boiling-wave-5271.herokuapp.com, is set up to provide a message board for people on the system, recording their current position and the time that they posted.  I, Scott Bettigole, have been hired to provide an analysis of the security issues in the product.  I will look for and provide information about any and all security flaws I find, so that the program may be improved to lower security risks and prevent any future problems.  I will offer potential ways to solve the issues found.
 
-<h3>Methodology</h3>
+<h1>Methodology</h1>
 
 To be able to post my own messages and location to the server, I used a program called Postman.  This program allows me to post anything that I want, and it is up to the server to prevent anything malicious from being added to the database.  I went through the different keyword requirements to post, and checked to see if I could enter malicious data into the client's database through malicious data in my post.
 
-<h3>Abstract of Findings</h3>
+<h1>Abstract of Findings</h1>
 
-I found three separate instances where the program is at risk malicious attacks through malicious posts to the board.  The issue is that users may input any data into the latitude, longitude, or message fields, and the program currently will not check whether or not the user's input is safe.  The message board will take these posts, and enter the information into the database, as long as the login is correct and all the input fields have been filled.  When users go to the message board, the page will give users the entire database, which presently may include malicious postings designed to attack the user.
+I found three separate instances where the program is at risk malicious attacks through malicious posts to the board, through a technique known as cross-site scripting.  The issue is that users may input any data into the latitude, longitude, or message fields, and the program currently will not check whether or not the user's input is safe.  The message board will take these posts, and enter the information into the database, as long as the login is correct and all the input fields have been filled.  When users go to the message board, the page will give users the entire database, which presently may include malicious postings designed to attack the user.  This issue should not be too difficult to fix, and would significantly increase the security of the site.
 
-<h3>Issues Found</h3>
+<h1>Issues Found</h1>
 
 I found three separate cases where the site is vulnerable to cross-site scripting attacks.  The lat, lng, and msg keys may be altered to include scripts, which can give malicious scripts to any users who access the site.
 </br></br>
@@ -19,10 +19,10 @@ On the lat keyword in the database, you see below that I have entered in data th
 </br></br>
 
 <img src="lat_scripting.png" alt="Latitude Scripting" height="200" width="500">
-</br></br>
+</br></br></br>
 
 Now, instead of providing the message board, the malicious data I entered redirects the site to an image.
-</br></br>
+</br></br></br>
 
 <img src = "hacked.jpg" alt = "hacked" height = "200" width="200">
 </br></br>
@@ -31,10 +31,10 @@ I then went and deleted those entries in the database to get it back to its orig
 </br></br>
 
 <img src="lng_scripting.png" alt="Latitude Scripting" height="200" width="500">
-</br></br>
+</br></br></br>
 
 However, the code I entered gets added to the database, and gives an alert to the screen, which can be seen by anyone who access the webpage.
-
+</br></br>
 <img src="lng_alert.png" alt="Latitude Scripting" height="250" width="800">
 </br></br>
 
@@ -47,10 +47,10 @@ On a third point, cross-site-scripting can also be used on the message key.  Bel
 This should be stopped from being entered, but the database accepts it, and responds with this alert to any user who accesses the message board:
 </br></br>
 <img src="msg_alert.png" alt="Latitude Scripting" height="225" width="800">
-</br></br>
+</br></br></br></br>
 
 Each of these issues may be seen on the home page(/), but is a flaw with the /sendLocation path.  Each of these issues are high risk, since any user may post data that then gives malicious data to every future user who accesses the site.  This may be fixed by making the only data that may be entered into the lat and lng fields be floats, so that nothing other than a number may be entered for the lat and lng.  For the msg field, any time that a user tries to put in a '<' character, you change it into its html encoded '&lt', so that users cannot enter in script tags to messages they post.
 
-<h3>Conclusion</h3>
+<h1>Conclusion</h1>
 
 In the future, make sure that you never trust user input.  This program would work fine if everyone entered only nice data, but it can be easily broken by someone looking to damage your site.  Try to make sure that any time user data is posted to a database or shown to other users, that steps are taken to prevent someone from trying to post malicious data.
